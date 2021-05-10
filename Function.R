@@ -39,4 +39,3 @@ CorTestNonZero <- function(rho0,x,y,tailed=c("right","left","two"))
   }
   return(results)
 }
-
