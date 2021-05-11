@@ -8,7 +8,7 @@ CorTestNonZero <- function(rho0,x,y,tailed=c("right","left","two"))
     Setup <- c("Left Tailed Test")
     Tstat <- z0
     DF <- n-2
-    pValue <- pnorm(z0)
+    pValue <- pt(z0)
     CorrelationCoefficient <- r12
     results <- data.frame(Setup,Tstat,DF,pValue,CorrelationCoefficient)
   }
@@ -17,7 +17,7 @@ CorTestNonZero <- function(rho0,x,y,tailed=c("right","left","two"))
     Setup <- c("Right Tailed Test")
     Tstat <- z0
     DF <- n-2
-    pValue <- 1-pnorm(z0)
+    pValue <- 1-pt(z0)
     CorrelationCoefficient <- r12
     results <- data.frame(Setup,Tstat,DF,pValue,CorrelationCoefficient)
   }  
@@ -28,11 +28,11 @@ CorTestNonZero <- function(rho0,x,y,tailed=c("right","left","two"))
     DF <- n-2
     if(z0 > 0)
     {
-      pValue <- 2*(1-pnorm(z0))
+      pValue <- 2*(1-pt(z0))
     }
     if(z0 < 0)
     {
-      pValue <- 2*pnorm(z0)
+      pValue <- 2*pt(z0)
     }
     CorrelationCoefficient <- r12
     results <- data.frame(Setup,Tstat,DF,pValue,CorrelationCoefficient)
